@@ -5,7 +5,7 @@ using System.Text;
 using API.Entities;
 using Microsoft.IdentityModel.Tokens;
 
-namespace API.Interface
+namespace API.Interfaces
 {
     public class TokenService : ITokenService
     {
