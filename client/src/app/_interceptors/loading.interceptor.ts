@@ -5,7 +5,7 @@ import {
   HttpEvent,
   HttpInterceptor
 } from '@angular/common/http';
-import { Observable, delay, finalize } from 'rxjs';
+import { delay, finalize, Observable } from 'rxjs';
 import { BusyService } from '../_services/busy.service';
 
 @Injectable()
@@ -19,8 +19,8 @@ export class LoadingInterceptor implements HttpInterceptor {
     return next.handle(request).pipe(
       delay(1000),
       finalize(() => {
-        this.busyService.idle();
+        this.busyService.idle()
       })
-    );
+    )
   }
 }

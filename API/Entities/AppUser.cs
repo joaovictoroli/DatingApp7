@@ -1,12 +1,10 @@
-using System.ComponentModel.DataAnnotations;
-using System.Security.AccessControl;
 using API.Extensions;
-using Microsoft.AspNetCore.Identity;
 
-namespace API.Entities;
+namespace API.Entities
+{
     public class AppUser
     {
-        public int Id { get; set; }        
+        public int Id { get; set; }
         public string UserName { get; set; }
         public byte[] PasswordHash { get; set; }
         public byte[] PasswordSalt { get; set; }
@@ -21,9 +19,10 @@ namespace API.Entities;
         public string City { get; set; }
         public string Country { get; set; }
         public List<Photo> Photos { get; set; } = new();
-        
-        // public int GetAge() 
+
+        // public int GetAge()
         // {
-        //     return DateOfBirth.CalculateAge();
+        //     return DateOfBirth.CalcuateAge();
         // }
     }
+}

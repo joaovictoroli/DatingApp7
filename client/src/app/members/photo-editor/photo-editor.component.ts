@@ -1,12 +1,12 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { FileUploader } from 'ng2-file-upload';
+import { take } from 'rxjs';
 import { Member } from 'src/app/_models/member';
+import { Photo } from 'src/app/_models/photo';
 import { User } from 'src/app/_models/user';
 import { AccountService } from 'src/app/_services/account.service';
 import { MembersService } from 'src/app/_services/members.service';
 import { environment } from 'src/environments/environment';
-import { FileUploader } from 'ng2-file-upload';
-import { take } from 'rxjs';
-import { Photo } from 'src/app/_models/photo';
 
 @Component({
   selector: 'app-photo-editor',
@@ -19,7 +19,6 @@ export class PhotoEditorComponent implements OnInit {
   hasBaseDropZoneOver = false;
   baseUrl = environment.apiUrl;
   user: User | undefined;
-
 
   constructor(private accountService: AccountService, private memberService: MembersService) {
     this.accountService.currentUser$.pipe(take(1)).subscribe({
@@ -90,5 +89,5 @@ export class PhotoEditorComponent implements OnInit {
       }
     }
   }
-}
 
+}

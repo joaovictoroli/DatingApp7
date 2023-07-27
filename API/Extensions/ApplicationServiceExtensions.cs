@@ -8,9 +8,8 @@ namespace API.Extensions
 {
     public static class ApplicationServiceExtensions
     {
-        public static IServiceCollection AddApplcationServices(this IServiceCollection services,
-            IConfiguration config
-            )
+        public static IServiceCollection AddApplicationServices(this IServiceCollection services,
+            IConfiguration config)
         {
             services.AddDbContext<DataContext>(opt =>
             {
@@ -22,10 +21,9 @@ namespace API.Extensions
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
             services.Configure<CloudinarySettings>(config.GetSection("CloudinarySettings"));
             services.AddScoped<IPhotoService, PhotoService>();
-            
+            services.AddScoped<LogUserActivity>();
+
             return services;
         }
-
-
     }
 }

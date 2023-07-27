@@ -8,7 +8,7 @@ namespace API.Data
 {
     public class Seed
     {
-        public static async Task SeedUser(DataContext context)
+        public static async Task SeedUsers(DataContext context)
         {
             if (await context.Users.AnyAsync()) return;
 
@@ -18,7 +18,7 @@ namespace API.Data
 
             var users = JsonSerializer.Deserialize<List<AppUser>>(userData);
 
-            foreach (var user in users) 
+            foreach (var user in users)
             {
                 using var hmac = new HMACSHA512();
 

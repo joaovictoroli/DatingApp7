@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace API.Data.Migrations
 {
     /// <inheritdoc />
-    public partial class ExtentedUserEntity : Migration
+    public partial class ExtendedUserEntity : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -44,7 +44,7 @@ namespace API.Data.Migrations
                 nullable: true);
 
             migrationBuilder.AddColumn<string>(
-                name: "Interest",
+                name: "Interests",
                 table: "Users",
                 type: "TEXT",
                 nullable: true);
@@ -67,6 +67,12 @@ namespace API.Data.Migrations
                 type: "TEXT",
                 nullable: false,
                 defaultValue: new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified));
+
+            migrationBuilder.AddColumn<string>(
+                name: "LookingFor",
+                table: "Users",
+                type: "TEXT",
+                nullable: true);
 
             migrationBuilder.CreateTable(
                 name: "Photos",
@@ -123,7 +129,7 @@ namespace API.Data.Migrations
                 table: "Users");
 
             migrationBuilder.DropColumn(
-                name: "Interest",
+                name: "Interests",
                 table: "Users");
 
             migrationBuilder.DropColumn(
@@ -136,6 +142,10 @@ namespace API.Data.Migrations
 
             migrationBuilder.DropColumn(
                 name: "LastActive",
+                table: "Users");
+
+            migrationBuilder.DropColumn(
+                name: "LookingFor",
                 table: "Users");
         }
     }
