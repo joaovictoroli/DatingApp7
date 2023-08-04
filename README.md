@@ -26,6 +26,9 @@
 	PROMPT: 
 	PS TrainningProject\DatingApp7-master> cd api
 	PS TrainningProject\DatingApp7-master\api> dotnet add package Microsoft.EntityFrameworkCore
+ 	PS TrainningProject\DatingApp7-master\api> dotnet add package Microsoft.AspNetCore.Identity.EntityFrameworkCore
+
+ 	
 
 ## Client Folder:
 	PROMPT: 
